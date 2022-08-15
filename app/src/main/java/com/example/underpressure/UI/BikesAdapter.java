@@ -150,7 +150,7 @@ public class BikesAdapter extends RecyclerView.Adapter<BikesAdapter.BikeViewHold
             return mBikes.size();
         } else return 0;
     }
-    
+
     public void setBikes (List<Bikes> bikes) {
         mBikes = bikes;
         notifyDataSetChanged();
