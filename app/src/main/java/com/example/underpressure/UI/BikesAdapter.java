@@ -2,7 +2,6 @@ package com.example.underpressure.UI;
 
 import android.content.Context;
 import android.content.Intent;
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +21,7 @@ public class BikesAdapter extends RecyclerView.Adapter<BikesAdapter.BikeViewHold
     private LayoutInflater mInflater;
 
     class BikeViewHolder extends RecyclerView.ViewHolder {
-        //private final TextView bikeIDTextView;
+        // TODO private final TextView bikeIDTextView;
         private final TextView bikeNameItemView;
         private final TextView forkModelItemView;
         private final TextView forkSpringRateItemView;
@@ -41,9 +40,9 @@ public class BikesAdapter extends RecyclerView.Adapter<BikesAdapter.BikeViewHold
         private final TextView frontTirePressureItemView;
         private final TextView rearTirePressureItemView;
 
-        public BikeViewHolder(@NonNull View itemView) {
+        private BikeViewHolder(View itemView) {
             super(itemView);
-            //bikeIDTextView
+            // TODO bikeIDTextView
             bikeNameItemView = itemView.findViewById(R.id.textViewBikeName);
             forkModelItemView = itemView.findViewById(R.id.textViewForkModel);
             forkSpringRateItemView = itemView.findViewById(R.id.textViewForkSpringRate);
@@ -160,5 +159,4 @@ public class BikesAdapter extends RecyclerView.Adapter<BikesAdapter.BikeViewHold
         mInflater = LayoutInflater.from(context);
         this.context = context;
     }
-
 }

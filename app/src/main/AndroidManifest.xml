@@ -18,14 +18,14 @@
             android:enabled="true"
             android:exported="true"></receiver>
         <activity
-            android:name=".UI.MainActivity"
-            android:exported="true"/>
-        <activity
             android:name=".UI.BikesList"
             android:exported="true"
             android:label="Bike Garage"
-            android:parentActivityName=".UI.MainActivity" >
-
+            android:parentActivityName=".UI.MainActivity" />
+        <activity
+            android:name=".UI.MainActivity"
+            android:label="Home"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

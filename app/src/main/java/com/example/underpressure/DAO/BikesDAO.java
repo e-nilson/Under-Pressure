@@ -1,5 +1,6 @@
 package com.example.underpressure.DAO;
 
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
@@ -11,6 +12,7 @@ import com.example.underpressure.Entity.Bikes;
 import java.util.List;
 
 // Inserts bikes into the database
+@Dao
 public interface BikesDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insertBike(Bikes bike);

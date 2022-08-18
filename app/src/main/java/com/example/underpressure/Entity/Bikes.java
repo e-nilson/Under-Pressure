@@ -37,7 +37,7 @@ public class Bikes {
         this.forkVolumeSpacers = forkVolumeSpacers;
         this.forkLSC = forkLSC;
         this.forkHSC = forkHSC;
-        this.forkLSR = forkLSR;
+        this.forkLSR = forkHSC;
         this.forkHSR = forkHSR;
         this.shockModel = shockModel;
         this.shockSpringRate = shockSpringRate;
@@ -50,7 +50,7 @@ public class Bikes {
         this.rearTirePressure = rearTirePressure;
     }
 
-    // Getter and setters for detailed bike information
+    // Getters and setters for detailed bike information
     public int getBikeID() {
         return bikeID;
     }
