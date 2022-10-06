@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,7 +47,7 @@ public class BikesList extends AppCompatActivity {
     }
 
     // Navigates to the bike detail page
-    public void enterBikeDetails (View view) {
+    public void enterNewBikeDetails(View view) {
         Intent intent = new Intent(BikesList.this, BikesDetailList.class);
         if (currentBike != null) intent.putExtra("bikeID", currentBike.getBikeID());
         startActivity(intent);
@@ -59,6 +60,31 @@ public class BikesList extends AppCompatActivity {
         return true;
     }
 
+    // Tells what happens with the created menus
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+                Intent homeIntent = new Intent(BikesList.this, MainActivity.class);
+                startActivity(homeIntent);
+                return true;
 
+            case R.id.refresh:
+                refreshBikeList();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
+    // Refreshes the bike list from the menu
+    private void refreshBikeList() {
+        recyclerView = findViewById(R.id.bikesRecyclerView);
+        final BikesAdapter adapter = new BikesAdapter(this);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        List<Bikes> filteredBikes = new ArrayList<>();
+        List<Bikes> allBikes = repository.getAllBikes();
+
+        numBikes = filteredBikes.size();
+        adapter.setBikes(allBikes);
+    }
 }

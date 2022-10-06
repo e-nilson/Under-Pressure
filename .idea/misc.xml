@@ -3,13 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../layout/custom_preview.xml" value="0.24370503597122303" />
         <entry key="app/src/main/res/layout/activity_bikes.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_bikes_detail.xml" value="0.22330097087378642" />
+        <entry key="app/src/main/res/layout/activity_bikes_details_list.xml" value="0.41684480547242414" />
         <entry key="app/src/main/res/layout/activity_bikes_list.xml" value="0.4625908507909363" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.45018115942028986" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.49238578680203043" />
+        <entry key="app/src/main/res/layout/bikes_details_list.xml" value="0.41684480547242414" />
         <entry key="app/src/main/res/layout/bikes_list.xml" value="0.335" />
         <entry key="app/src/main/res/menu/menu_bike.xml" value="0.4159897392047884" />
+        <entry key="app/src/main/res/menu/menu_bike_detail.xml" value="0.22963275643731532" />
         <entry key="app/src/main/res/menu/menu_bikes_detail.xml" value="0.4159897392047884" />
         <entry key="app/src/main/res/menu/menu_recyclerview.xml" value="0.4625908507909363" />
       </map>

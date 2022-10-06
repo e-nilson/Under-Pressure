@@ -10,7 +10,7 @@
 
     <item
         android:title="Delete"
-        android:id="@+id/deleteTermDetail"
+        android:id="@+id/deleteBikeDetail"
         android:orderInCategory="100"
         app:showAsAction="never" />
 </menu>

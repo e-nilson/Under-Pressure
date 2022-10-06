@@ -1,5 +1,6 @@
 package com.example.underpressure.UI;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -43,10 +44,11 @@ public class BikesDetailList extends AppCompatActivity {
     EditText editRearPressure;
 
 
+    // Initializes the bike details page
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bikes_detail);
+        setContentView(R.layout.activity_bikes_details_list);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -74,6 +76,7 @@ public class BikesDetailList extends AppCompatActivity {
         editShockHSR = findViewById(R.id.editShockHSR);
         editFrontPressure = findViewById(R.id.editFrontPressure);
         editRearPressure = findViewById(R.id.editRearPressure);
+
         if (currentBike != null) {
             editBikeName.setText(currentBike.getBikeName());
             editForkModel.setText(currentBike.getForkModel());
@@ -92,34 +95,36 @@ public class BikesDetailList extends AppCompatActivity {
             editFrontPressure.setText(currentBike.getFrontTirePressure());
             editRearPressure.setText(currentBike.getRearTirePressure());
         }
-        // Adds the bike recycler view to the bike details page based on bikeID
-        RecyclerView recyclerView = findViewById(R.id.bikesRecyclerView);
-        final BikesAdapter bikesAdapter = new BikesAdapter(this);
-        recyclerView.setAdapter(bikesAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        List<Bikes> filteredBikes = new ArrayList<>();
-        for (Bikes b : repository.getAllBikes()) {
-            if (b.getBikeID() == bikeID) filteredBikes.add(b);
-        }
-        numBikes = filteredBikes.size();
-        // TODO bikesAdapter = setBikes(filteredBikes);
     }
 
-    /* TODO return a int for the below attributes instead of strings
+    //TODO return a int for the below attributes instead of strings
+    /*
     public void saveBikeDetails (View view) {
         Bikes bikes;
         if (bikeID == -1) {
             int newBikeID = repository.getAllBikes().get(repository.getAllBikes().size() -1 ).getBikeID() + 1;
             bikes = new Bikes(newBikeID, editBikeName.getText().toString(), editForkModel.getText().toString(), editForkVolumeSpacers.getText(),
-            editForkLSC.getText().toString(), editForkHSC.getText().toString(), editForkLSR.getText().toString(), editForkHSR.getText().toString(),
-            editShockModel.getText().toString(), editShockSpringRate.getText().toString(), editShockVolumeSpacers.getText().toString(), editShockLSC.getText().toString(),
-            ediShockHSC.getText().toString(), editShockLSR.getText().toString(), editShockHSR.getText().toString(),
-            editFrontPressure.getText().toString(), editRearPressure.getText().toString());
-
+                    editForkLSC.getText().toString(), editForkHSC.getText().toString(), editForkLSR.getText().toString(), editForkHSR.getText().toString(),
+                    editShockModel.getText().toString(), editShockSpringRate.getText().toString(), editShockVolumeSpacers.getText().toString(), editShockLSC.getText().toString(),
+                    ediShockHSC.getText().toString(), editShockLSR.getText().toString(), editShockHSR.getText().toString(),
+                    editFrontPressure.getText().toString(), editRearPressure.getText().toString());
+            repository.insertBike(bikes);
+        } else {
+            bikes = new Bikes(bikeID, editBikeName.getText().toString(), editForkModel.getText().toString(), editForkVolumeSpacers.getText(),
+                    editForkLSC.getText().toString(), editForkHSC.getText().toString(), editForkLSR.getText().toString(), editForkHSR.getText().toString(),
+                    editShockModel.getText().toString(), editShockSpringRate.getText().toString(), editShockVolumeSpacers.getText().toString(), editShockLSC.getText().toString(),
+                    ediShockHSC.getText().toString(), editShockLSR.getText().toString(), editShockHSR.getText().toString(),
+                    editFrontPressure.getText().toString(), editRearPressure.getText().toString());
+            repository.updateBike(bikes);
         }
+        Intent intent = new Intent(BikesDetailList.this, BikesList.class);
+        startActivity(intent);
     }
 
      */
+
+
+
 }
 
 

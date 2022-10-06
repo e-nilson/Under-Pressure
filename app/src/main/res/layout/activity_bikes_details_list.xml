@@ -25,7 +25,7 @@
                 android:id="@+id/editBikeName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Santa Cruz Bronson V4"
+                android:hint="Santa Cruz Bronson V4"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:textStyle="bold"></EditText>
@@ -455,5 +455,17 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:onClick="saveBikeDetails"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_save" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

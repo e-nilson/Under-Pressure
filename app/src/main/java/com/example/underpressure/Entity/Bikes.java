@@ -38,7 +38,7 @@ public class Bikes {
         this.forkVolumeSpacers = forkVolumeSpacers;
         this.forkLSC = forkLSC;
         this.forkHSC = forkHSC;
-        this.forkLSR = forkHSC;
+        this.forkLSR = forkLSR;
         this.forkHSR = forkHSR;
         this.shockModel = shockModel;
         this.shockSpringRate = shockSpringRate;

@@ -2,6 +2,7 @@ package com.example.underpressure.UI;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,15 +16,13 @@ import com.example.underpressure.R;
 
 import java.util.List;
 
-public class BikesAdapter extends RecyclerView.Adapter<BikesAdapter.BikeViewHolder> {
+public class BikesDetailsAdapter extends RecyclerView.Adapter<BikesDetailsAdapter.BikeDetailViewHolder> {
     private List<Bikes> mBikes;
     private Context context;
     private LayoutInflater mInflater;
 
-    class BikeViewHolder extends RecyclerView.ViewHolder {
-        //private final TextView bikeIDTextView;
+    class BikeDetailViewHolder extends RecyclerView.ViewHolder {
         private final TextView bikeNameItemView;
-        /*
         private final TextView forkModelItemView;
         private final TextView forkSpringRateItemView;
         private final TextView forkVolumeSpacersItemView;
@@ -41,13 +40,10 @@ public class BikesAdapter extends RecyclerView.Adapter<BikesAdapter.BikeViewHold
         private final TextView frontTirePressureItemView;
         private final TextView rearTirePressureItemView;
 
-         */
-
-        private BikeViewHolder(View itemView) {
+        private BikeDetailViewHolder(View itemView) {
             super(itemView);
             //bikeIDTextView = itemView.findViewById(R.id.textViewBikeID)
             bikeNameItemView = itemView.findViewById(R.id.textViewBikeName);
-            /*
             forkModelItemView = itemView.findViewById(R.id.textViewForkModel);
             forkSpringRateItemView = itemView.findViewById(R.id.textViewForkSpringRate);
             forkVolumeSpacersItemView = itemView.findViewById(R.id.textViewForkVolumeSpacers);
@@ -64,8 +60,6 @@ public class BikesAdapter extends RecyclerView.Adapter<BikesAdapter.BikeViewHold
             shockHSRItemView = itemView.findViewById(R.id.textViewShockHSR);
             frontTirePressureItemView = itemView.findViewById(R.id.textViewFrontPressure);
             rearTirePressureItemView = itemView.findViewById(R.id.textViewRearPressure);
-
-             */
 
             itemView.setOnClickListener(new View.OnClickListener() {
 
@@ -99,20 +93,19 @@ public class BikesAdapter extends RecyclerView.Adapter<BikesAdapter.BikeViewHold
         }
     }
 
+
     @NonNull
     @Override
-    public BikesAdapter.BikeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = mInflater.inflate(R.layout.bikes_list,parent,false);
-        return new BikeViewHolder(itemView);
+    public BikesDetailsAdapter.BikeDetailViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View itemView = mInflater.inflate(R.layout.bikes_details_list,parent,false);
+        return new BikeDetailViewHolder(itemView);
     }
 
-    // This is where you put things on the text fields
     @Override
-    public void onBindViewHolder(@NonNull BikeViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull BikesDetailsAdapter.BikeDetailViewHolder holder, int position) {
         if (mBikes != null) {
             final Bikes current = mBikes.get(position);
             holder.bikeNameItemView.setText(current.getBikeName());
-            /*
             holder.forkModelItemView.setText(current.getForkModel());
             holder.forkSpringRateItemView.setText(current.getForkSpringRate());
             holder.forkVolumeSpacersItemView.setText(current.getForkVolumeSpacers());
@@ -129,11 +122,8 @@ public class BikesAdapter extends RecyclerView.Adapter<BikesAdapter.BikeViewHold
             holder.shockHSRItemView.setText(current.getShockHSR());
             holder.frontTirePressureItemView.setText(current.getFrontTirePressure());
             holder.rearTirePressureItemView.setText(current.getRearTirePressure());
-
-             */
         } else {
             holder.bikeNameItemView.setText("No Bike Name");
-            /*
             holder.forkModelItemView.setText("No Fork Model");
             holder.forkSpringRateItemView.setText("No Fork Spring Rate");
             holder.forkVolumeSpacersItemView.setText("No Fork Volume Spacers");
@@ -150,8 +140,6 @@ public class BikesAdapter extends RecyclerView.Adapter<BikesAdapter.BikeViewHold
             holder.shockHSRItemView.setText("No Shock HSR");
             holder.frontTirePressureItemView.setText("No Front Tire Pressure");
             holder.rearTirePressureItemView.setText("No Rear Tire Pressure");
-
-             */
         }
     }
 
@@ -168,7 +156,7 @@ public class BikesAdapter extends RecyclerView.Adapter<BikesAdapter.BikeViewHold
         notifyDataSetChanged();
     }
 
-    public BikesAdapter (Context context) {
+    public BikesDetailsAdapter (Context context) {
         mInflater = LayoutInflater.from(context);
         this.context = context;
     }

@@ -9,7 +9,7 @@
         app:showAsAction="never"/>
 
     <item android:title="Refresh"
-        android:id="@+id/refreshTerm"
+        android:id="@+id/refreshBike"
         android:orderInCategory="100"
         app:showAsAction="never"/>
 
