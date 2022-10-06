@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey;
 public class Users {
     @PrimaryKey(autoGenerate = true)
     private final int userID;
+
     private String userName;
     private String password;
 
@@ -48,7 +49,7 @@ public class Users {
     }
 
     public boolean validUserInput(int userID, String username, String password) {
-        int MAX_LENGTH = 20;
+        //int MAX_LENGTH = 20;
 
         if (username.isEmpty() || password.isEmpty()) {
             return false;

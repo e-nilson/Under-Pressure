@@ -105,6 +105,7 @@ public class BikesDetailList extends AppCompatActivity {
         // TODO bikesAdapter = setBikes(filteredBikes);
     }
 
+    /* TODO return a int for the below attributes instead of strings
     public void saveBikeDetails (View view) {
         Bikes bikes;
         if (bikeID == -1) {
@@ -117,6 +118,8 @@ public class BikesDetailList extends AppCompatActivity {
 
         }
     }
+
+     */
 }
 
 

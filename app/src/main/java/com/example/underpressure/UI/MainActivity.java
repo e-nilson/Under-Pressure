@@ -12,12 +12,13 @@ import com.example.underpressure.R;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Adds bike sample data to bike detail activity
         Repository repository = new Repository(getApplication());
@@ -25,13 +26,10 @@ public class MainActivity extends AppCompatActivity {
                 2, 2, 10, 10, "Super Deluxe", 178, 2,
                 2, 2, 5, 5, 23, 26);
         repository.insertBike(bikesEntity);
-        /*
-        Bikes bikesEntity2 = new Bikes(1,"Tallboy V4", "Pike Ultimate",51, 1,
+        Bikes bikesEntity2 = new Bikes(2,"Tallboy V5", "Pike Ultimate",51, 1,
                 2, 2, 10, 10, "Super Deluxe", 112, 0,
                 2, 2, 5, 5, 18, 21);
         repository.insertBike(bikesEntity2);
-
-         */
     }
 
     // Navigates to the bike list page

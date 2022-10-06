@@ -27,16 +27,17 @@ public class BikesList extends AppCompatActivity {
 
     Bikes currentBike;
 
-    // Initializes the bikes list page
+    // Initializes the main bikes list page
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bikes_list);
-        // TODO getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        // TODO getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         recyclerView = findViewById(R.id.bikesRecyclerView);
         Repository repository = new Repository(getApplication());
+
         List<Bikes> allBikes = repository.getAllBikes();
         BikesAdapter bikesAdapter = new BikesAdapter(this);
         recyclerView.setAdapter(bikesAdapter);
@@ -51,12 +52,10 @@ public class BikesList extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-
     // Creates a menu
     @Override
     public boolean onCreateOptionsMenu (Menu menu) {
-        // TODO getMenuInflater().inflate(R.menu.menu_bike,menu);
+        getMenuInflater().inflate(R.menu.menu_bike,menu);
         return true;
     }
 

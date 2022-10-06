@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey;
 public class Bikes {
     @PrimaryKey(autoGenerate = true)
     private int bikeID;
+
     private String bikeName;
     private String forkModel;
     private int forkSpringRate;
@@ -218,5 +219,4 @@ public class Bikes {
                 ", rearTirePressure=" + rearTirePressure +
                 '}';
     }
-
 }

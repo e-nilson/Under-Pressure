@@ -27,6 +27,6 @@ public interface BikesDAO {
     List<Bikes> getAllBikes();
 
     @Query("DELETE FROM bikes_table")
-    void deleteAllTerms();
+    void deleteAllBikes();
 
 }

@@ -18,8 +18,13 @@
             android:enabled="true"
             android:exported="true"></receiver>
         <activity
+            android:name=".UI.BikesDetailList"
+            android:exported="false"
+            android:label="Bike Garage"
+            android:parentActivityName=".UI.BikesList" />
+        <activity
             android:name=".UI.BikesList"
-            android:exported="true"
+            android:exported="false"
             android:label="Bike Garage"
             android:parentActivityName=".UI.MainActivity" />
         <activity

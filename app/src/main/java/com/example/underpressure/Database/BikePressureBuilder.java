@@ -13,7 +13,7 @@ import com.example.underpressure.DAO.UsersDAO;
 import com.example.underpressure.Entity.Bikes;
 import com.example.underpressure.Entity.Users;
 
-// Database with terms, courses, and assessments tables
+// Database with bikes and users tables
 @Database(entities = {Bikes.class, Users.class}, version = 1, exportSchema = false)
 public abstract class BikePressureBuilder extends RoomDatabase {
     public abstract BikesDAO bikesDAO();

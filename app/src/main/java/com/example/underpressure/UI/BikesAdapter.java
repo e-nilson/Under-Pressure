@@ -102,7 +102,7 @@ public class BikesAdapter extends RecyclerView.Adapter<BikesAdapter.BikeViewHold
 
     // This is where you put things on the text fields
     @Override
-    public void onBindViewHolder(@NonNull BikesAdapter.BikeViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull BikeViewHolder holder, int position) {
         if (mBikes != null) {
             final Bikes current = mBikes.get(position);
             holder.bikeNameItemView.setText(current.getBikeName());
@@ -147,7 +147,8 @@ public class BikesAdapter extends RecyclerView.Adapter<BikesAdapter.BikeViewHold
     public int getItemCount() {
         if (mBikes != null) {
             return mBikes.size();
-        } else return 0;
+        }
+        else return 0;
     }
 
     public void setBikes (List<Bikes> bikes) {
